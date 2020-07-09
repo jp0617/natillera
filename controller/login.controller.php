@@ -14,7 +14,12 @@ class login
         $tittle = "Natillera-login";
         require_once HTML_DIR . 'overall/header.html';
         require_once HTML_DIR . 'usuario/login.html';
-        // require_once HTML_DIR . 'overall/modal.php';
-        // require_once HTML_DIR . 'overall/footer_login.php';
+        require_once HTML_DIR . 'overall/modal.html';
+        require_once HTML_DIR . 'overall/footer.html';
+    }
+
+    public function validacion(){
+        $this->index();
+        echo "<script> Login('email'); </script>";
     }
 }
