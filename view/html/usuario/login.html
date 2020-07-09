@@ -1,40 +1,56 @@
 <center>
-    <div class="form">
-        <div class="img">
-    <img class="im" src="view/assets/ahorro254772a094-73b0e9cb5dfe0fbf64283cfc9ebaf722-1200x800.jpg" width="320px" height="320px">
+  <div class="form">
+    <div class="img">
+      <img
+        class="im"
+        src="view/assets/ahorro254772a094-73b0e9cb5dfe0fbf64283cfc9ebaf722-1200x800.jpg"
+        width="320px"
+        height="320px"
+      />
     </div>
-        <form class="fr"> 
-            <div>
-                <i class="fas fa-user-circle"> </i>
-                <br />
-                <label>Inicio de sesión</label>
-            </div>
+    <form class="fr" action="index.php" method="POST">
+      <div>
+        <i class="fas fa-user-circle"> </i>
+        <br />
+        <label>Inicio de sesión</label>
+      </div>
 
-            <br />
-            <br />
+      <br />
+      <br />
 
-            <div class="">
-                <input class="input" type="text"/>
-                <i class="fas fa-user-shield"></i>
-            </div>
+      <div class="">
+        <input 
+         class="input" 
+         type="text" 
+         name="user" 
+         required="required" 
+        />
+        <i class="fas fa-user-shield"></i>
+      </div>
 
-            <br />
-            <br />
+      <br />
+      <br />
 
-            <div class="">
-                <input class="input" type="password">
-                <i class="fas fa-key"></i>
-            </div>
+      <div class="">
+        <input
+          class="input"
+          type="password"
+          name="password"
+          required="required"
+        />
+        <i class="fas fa-key"></i>
+      </div>
 
-            <br />
-            <br />
-            <br />
+      <br />
+      <br />
+      <br />
 
-            <div>
-                <button type="submit" class="btn btn-outline-info">Ingresar <i class="fas fa-sign-in-alt"></i></button>
-            </div>
-
-        </form>
-    </div>
-
+      <div>
+        <button type="submit" class="btn btn-outline-info">
+          Ingresar <i class="fas fa-sign-in-alt"></i>
+        </button>
+      </div>
+    </form>
+    
+  </div>
 </center>
