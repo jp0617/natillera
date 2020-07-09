@@ -11,10 +11,10 @@ function index($controller)
     $controller->index();
 }
 
-if (isset($_POST['ema']) && isset($_POST['pas'])) {
+if (isset($_POST['user']) && isset($_POST['password'])) {
     $login = "login";
     require_once "controller/$login" . ".controller.php";
-    $login = ucwords($login) . '.controller';
+    $login = ucwords($login);
     $login = new $login;
     $login->validacion();
 } else if (!isset($_SESSION['ema'])) {
