@@ -1,0 +1,52 @@
+
+.form
+{
+    padding: 20px;
+    margin: 100px;
+    width: 590px;
+    background-color: white ;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.im
+{
+    border-radius: 160px;
+    box-sizing: border-box;
+}
+
+.container
+{
+    background-color:blue ;
+    background-image: linear-gradient(to right, purple,#202AB0);
+}
+
+label
+{
+    font-family: 'Merienda One', cursive;
+    font-size: 26px;
+}
+
+.btn
+{
+    font-family: 'Merienda One', cursive;
+    font-size: 20px;
+}
+
+.input
+{
+    border-radius: 12px;
+    background: #e6e6e6;
+    border-top-color: blueviolet;
+    border-left-color: blueviolet;
+    border-right-color: #202AB0;
+    border-bottom-color: #202AB0;
+    font-family:'Merienda One', cursive;
+    font-size: 12px;
+}
+.img
+{
+display: flex;
+
+}
