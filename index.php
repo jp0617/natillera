@@ -20,5 +20,14 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
 } else if (!isset($_SESSION['ema'])) {
     index("login");
 }
-
+if (isset($_SESSION['ema']) && isset($_REQUEST['c'])) {
+    $controller = strtolower($_REQUEST['c']);
+    $accion     = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
+    require_once "controller/$controller" . ".controller.php";
+    $controller = ucwords($controller);
+    $controller = new $controller;
+    call_user_func(array($controller, $accion));
+} else if (isset($_SESSION['ema']) && !isset($_REQUEST['c'])) {
+    index("summary");
+}
 ?>
