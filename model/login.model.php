@@ -3,31 +3,33 @@
 class login_model
 {
     private $DB;
-    private $User;
+    private $user;
 
     public function __construct()
     {
         $this->DB = database::getconnection();
-        $this->User = array();
+        $this->user = array();
     }
 
     public function login($user, $pass)
     {
-        $query = $this->DB->query("select * from tblusers where strUser='" . $user . "'");
-        $fila = $query->fetch_object();
-        $array = json_decode(json_encode($fila), true);
-        if (!empty($array)) {
-            if ($array["password"] == md5(md5($pass))) {
-                $user[] = $array["nombre"] . " " . $array["apellido"];
-                $user[] = $array["rol"];
-            } else {
-                $user[] = 8;
-                $user[] = "";
+
+        $query = $this->DB->query("call spLogin('" . $user . "')");
+        $fila  = $query->fetch_assoc();
+        if (!empty($fila)) {
+            if ($fila["password"] == md5(md5($pass))) {
+                $array[0]=4;
+                $array[1]=$fila["nombre"]." ".$fila["apellido"];
+                $array[2]=$fila["rol"];
+            }else {
+                $user[] = 5; //Usuario valido, contraseña incorrecta
+                
             }
         } else {
-            $user[] = 9;
-            $user[] = "";
+            $user[] = 6; //Usuario no existe
+            
         }
-        return $user;
+        
+        return $array;
     }
 }
