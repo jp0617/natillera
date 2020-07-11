@@ -22,11 +22,11 @@ class login_model
                 $array[1]=$fila["nombre"]." ".$fila["apellido"];
                 $array[2]=$fila["rol"];
             }else {
-                $user[] = 5; //Usuario valido, contraseña incorrecta
+                $array[0] = 5; //Usuario valido, contraseña incorrecta
                 
             }
         } else {
-            $user[] = 6; //Usuario no existe
+            $array[0] = 6; //Usuario no existe
             
         }
         

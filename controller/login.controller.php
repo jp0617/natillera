@@ -17,7 +17,7 @@ class login
     {
         $tittle = "Natillera-login";
         require_once HTML_DIR . 'overall/header.html';
-        require_once HTML_DIR . 'usuario/login.html';
+        require_once HTML_DIR . 'user/login.html';
         // require_once HTML_DIR . 'overall/modal.html';
         require_once HTML_DIR . 'overall/footer.html';
     }
@@ -30,14 +30,12 @@ class login
             $data = $this->model->login($usuario, $password);
             if ($data[0] == 4) {
                 $user_agent = $_SERVER['HTTP_USER_AGENT'];
-                print ($_SERVER["REMOTE_ADDR"]);
-                print $this->log_->so($user_agent);
                 $this->log_->log($data[1],'Inicio de sesion',$this->log_->so($user_agent),$_SERVER["REMOTE_ADDR"]);
-                
-                 $this->index();
-                echo "<script> Login('success'); </script>";
-                // $_SESSION['Nombre'] = $data[1];
-                // $_SESSION['rol'] = $data[2];
+                $_SESSION['nombre'] = $data[1];
+                $_SESSION['rol'] = $data[2];
+                header('location: index.php?c=home');
+               
+                var_dump($_SESSION["rol"]);
             }elseif ($data[0] == 5) {
                 $this->index();
                 echo "<script> Login('password'); </script>";
