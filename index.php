@@ -17,17 +17,20 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
     $login = ucwords($login);
     $login = new $login;
     $login->validacion();
-} else if (!isset($_SESSION['ema'])) {
+} else if (!isset($_SESSION['nombre'])) {
     index("login");
 }
-if (isset($_SESSION['ema']) && isset($_REQUEST['c'])) {
+
+if (isset($_SESSION['nombre']) && isset($_REQUEST['c'])) {
     $controller = strtolower($_REQUEST['c']);
     $accion     = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
     require_once "controller/$controller" . ".controller.php";
     $controller = ucwords($controller);
     $controller = new $controller;
     call_user_func(array($controller, $accion));
-} else if (isset($_SESSION['ema']) && !isset($_REQUEST['c'])) {
-    index("summary");
+} else if (isset($_SESSION['rol'])=="1") {
+    index("admin");
+}else if(isset($_SESSION['rol'])=="2"){
+    index("usuario");
 }
 ?>
