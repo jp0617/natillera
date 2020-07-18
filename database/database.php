@@ -4,7 +4,7 @@ class database{
         $conn= new mysqli('localhost','root','qQ12345678','dboNatillera');
         $conn->query("set names 'utf8'");
         if ($conn->connect_error) {
-            die('no se pudo conectar a la base de dato' . $conn->connect_error);
+            die('no se pudo conectar a la base de datos' . $conn->connect_error);
         } else {
             return $conn;
         }
