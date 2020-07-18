@@ -1,72 +1,285 @@
+/* =========================[DISEÑO LOGIN]================================= */
 
-.form
-{
-    padding: 20px;
-    margin: 100px;
-    width: 590px;
-    background-color: white ;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    
-}
-.im
-{
-    border-radius: 160px;
-    box-sizing: border-box;
+/* diseño de los cuadros de texto */
+input{
+  border: none;
+  outline: none;
+  font-family: "Merienda One", cursive;
 }
 
-.container
-{
-    background-color:blue ;
-    background-image: linear-gradient(to right, purple,#202AB0);
+.wrap-input-100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+  padding-bottom: 13px;
+  margin-bottom: 27px;
 }
 
-label
-{
-    font-family: 'Merienda One', cursive;
-    font-size: 26px;
+.input-100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-size: 18px;
+  color: black;
+  line-height: 1.2;
+  padding: 0 5px;
+  border: none;
 }
 
-.btn
-{
-    font-family: 'Merienda One', cursive;
-    font-size: 20px;
+.focus-input-100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
-.input
-{
-    border-radius: 12px;
-    background: #e6e6e6;
-    border-top-color: blueviolet;
-    border-left-color: blueviolet;
-    border-right-color: #202AB0;
-    border-bottom-color: #202AB0;
-    font-family:'Merienda One', cursive;
-    font-size: 12px;
-}
-.img
-{
-display: flex;
-
-}
-.vertical-menu {
-    width: 200px; /* Set a width if you like */
-  }
+.focus-input-100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
   
-  .vertical-menu a {
-    background-color: #eee; /* Grey background color */
-    color: black; /* Black text color */
-    display: block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-  }
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
   
-  .vertical-menu a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
-  }
-  
-  .vertical-menu a.active {
-    background-color: #4CAF50; /* Add a green color to the "active/current" link */
-    color: white;
-  }
+  background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+}
+
+input.input-100 {
+  height: 40px;
+}
+
+
+textarea.input-100 {
+  min-height: 110px;
+  padding-top: 9px;
+  padding-bottom: 13px;
+}
+
+
+.input-100:focus + .focus-input-100::before {
+  width: 100%;
+}
+
+.has-val.input-100 + .focus-input-100::before {
+  width: 100%;
+}
+
+/* diseño del boton */
+button {
+  outline: none !important;
+	border: none;
+  background: transparent;
+  font-family: "Merienda One", cursive;
+}
+
+button:hover {
+  cursor: pointer;
+  font-family: "Merienda One", cursive;
+}
+
+iframe {
+  border: none !important;
+}
+
+.container-contact-100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 13px;
+  font-family: "Merienda One", cursive;
+}
+
+.wrap-contact-100-form-btn {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+  font-family: "Merienda One", cursive;
+}
+.contact-100-form-bgbtn {
+  font-family: "Merienda One", cursive;
+  position: absolute;
+  z-index: -1;
+  width: 300%;
+  height: 100%;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: -o-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  top: 0;
+  left: -100%;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact-100-form-btn {
+  font-family: "Merienda One", cursive;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.wrap-contact-100-form-btn:hover .contact-100-form-bgbtn {
+  left: 0;
+}
+
+.contact-100-form-btn i {
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.contact-100-form-btn:hover i {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px);
+}
+/* diseño del formulario */
+.form {
+  padding: 30px;
+  margin: 100px;
+  width: 700px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* diseño de la imagen */
+.im {
+  padding: 0px;
+  margin: 0px;
+  border-radius: 180px;
+  box-sizing: border-box;
+}
+
+.img {
+  display: flex;
+}
+
+/* diseño del fondo */
+.container {
+  background-image: linear-gradient(100deg, #00dbde, #fc00ff);
+}
+
+/* diseño de los textos */
+label {
+  font-family: "Merienda One", cursive;
+  font-size: 40px;
+}
+/* =======================[FIN DISEÑO LOGIN]================================= */
+
+/* =======================[DISEÑO ADMIN]================================= */
+
+.left_area h3 {
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.left_area span {
+  color: #1dc4e7;
+}
+
+.side-bar {
+  background: #2f323a;
+  /* width: 250px;
+  height: 100%;
+  margin: 1cm; */
+  border-radius: 10px;
+}
+
+.side-bar .profile_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.side-bar h4 {
+  color: #ccc;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.side-bar a {
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-left: 40px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-property: background;
+}
+
+.side-bar a:hover {
+  background: #19b3d3;
+}
+
+.side-bar i {
+  padding-right: 10px;
+}
+
+label #side-bar_btn {
+  z-index: -190px;
+}
+
+#check:checked ~ .side-bar a span {
+  display: none;
+}
+
+#check:checked ~ .side-bar a {
+  font-size: 20px;
+  margin-left: 170px;
+  width: 80px;
+}
+
+#check {
+  display: none;
+}
+
+.content{
+  background-color: #19b3d3;
+  padding: 300px;
+  width: 90px;
+  height: 10px;
+  margin: 5px;
+}
+
+/* =======================[FIN DISEÑO ADMIN]================================= */
