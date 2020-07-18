@@ -29,7 +29,7 @@ function Loggedin(user) {
 
   Toast.fire({
     icon: "success",
-    title: "Bienvenido " + user,
+    title: "Bienvenido " + user
   });
 }
 
