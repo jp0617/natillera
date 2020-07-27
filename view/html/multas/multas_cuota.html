@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>multa cuota</title>
+    <link rel="stylesheet" href="multas.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- ---------------------------------------------------------- -->
+    <!-- -----------Se muestra la lista de socios------------------ -->
+    <script>
+      $(document).ready(function () {
+        $(".default_option").click(function () {
+          $(this).parent().toggleClass("active");
+        });
+
+        $(".select_ul li").click(function () {
+          var currentele = $(this).html();
+          $(".default_option li").html(currentele);
+          $(this).parents(".select_wrap").removeClass("active");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- -------------------------------------------------------------------- -->
+    <!-- --------------------- Lista de socios ------------------------------ -->
+
+    <div class="wrapper">
+      <div class="title">
+        Seleccione un socio:
+      </div>
+
+      <div class="select_wrap">
+        <ul class="default_option">
+          <li>
+            <div class="option text">
+              <p>Seleccione:</p>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="select_ul">
+          <li>
+            <div class="option uno">
+              <p>Socio1</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="option dos">
+              <p>Socio2</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="option tres">
+              <p>Socio3</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ------------------------------------------------ -->
+    <!-- -----------cuadro de texto para el precio------- -->
+
+    <div class="wrapp">
+        <div class="text_precio">
+          Precio:
+        </div>
+        <input type="text" name="precio" placeholder="$"/>
+    </div>
+
+      <!-- --------------------------------------------- -->
+      <!-- -------------Boton ingresar multa------------ -->
+
+      <div class="content_btn_multa">
+        <button class="button_multa">
+          <span class="text_multa">Ingresar multa de cuota</span>
+        </button>
+      </div>
+
+  </body>
+</html>
