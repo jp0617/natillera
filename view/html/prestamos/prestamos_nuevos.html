@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prestamo nuevo</title>
+    <link rel="stylesheet" href="prestamos.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- ---------------------------------------------------------- -->
+    <!-- -----------Se muestra la lista de socios------------------ -->
+    <script>
+      $(document).ready(function () {
+        $(".default_option").click(function () {
+          $(this).parent().toggleClass("active");
+        });
+
+        $(".select_ul li").click(function () {
+          var currentele = $(this).html();
+          $(".default_option li").html(currentele);
+          $(this).parents(".select_wrap").removeClass("active");
+        });
+      });
+    </script>
+    <!-- -------------------------------------------------------------------- -->
+    <!-- --------------------- Lista de socios ------------------------------ -->
+    <div class="wrapper">
+      <div class="title">
+        Seleccione un socio:
+      </div>
+
+      <div class="select_wrap">
+        <ul class="default_option">
+          <li>
+            <div class="option text">
+              <p>Seleccione:</p>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="select_ul">
+          <li>
+            <div class="option uno">
+              <p>Socio1</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="option dos">
+              <p>Socio2</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="option tres">
+              <p>Socio3</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- -------------------------------------------------------------- -->
+    <!-- --------------------cuadro de fiador----------------------------- -->
+
+    <div class="wrapp_f">
+      <div class="text_fiador">
+        Fiador:
+      </div>
+      <input type="text" name="fiador" placeholder="Ingrese:"/>
+    </div>
+
+    <!-- -------------------------------------------------------------- -->
+    <!-- --------------------cuadro de precio---------------------------  -->
+
+    <div class="wrapp">
+        <div class="text_precio">
+          Precio:
+        </div>
+        <input type="text" name="precio" placeholder="Ingrese:"/>
+    </div>
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- ---------------Boton ingresar prestamo nuevo---------------- -->
+
+    <div class="content_btn_prestamo">
+      <button class="button_prestamo">
+        <span class="text_prestamo">Ingresar prestamo nuevo</span>
+      </button>
+    </div>
+  </body>
+</html>
