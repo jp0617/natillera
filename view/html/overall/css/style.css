@@ -122,7 +122,7 @@ iframe {
   background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
   background: -o-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
   background: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: linear-gradient(left, #00dbde, #3c073d, #00dbde, #fc00ff);
   top: 0;
   left: -100%;
 
