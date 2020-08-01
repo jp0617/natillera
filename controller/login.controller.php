@@ -33,9 +33,14 @@ class login
                 $this->log_->log($data[1],'Inicio de sesion',$this->log_->so($user_agent),$_SERVER["REMOTE_ADDR"]);
                 $_SESSION['nombre'] = $data[1];
                 $_SESSION['rol'] = $data[2];
-                header('location: index.php?c=admin');
+                if($_SESSION['rol']==1){
+
+                    header('location: index.php?c=admin');
+                }else{
+                    header('location: index.php?c=user');
+                }
                
-                var_dump($_SESSION["rol"]);
+                
             }elseif ($data[0] == 5) {
                 $this->index();
                 echo "<script> Login('password'); </script>";
