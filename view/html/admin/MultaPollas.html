@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>abonos</title>
+    <link rel="stylesheet" href="C:\laragon\www\natillera\view\html\overall\css\style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <!-- ---------------------------------------------------------- -->
+    <!-- -----------Se muestra la lista de socios------------------ -->
+    <script>
+        $(document).ready(function () {
+            $(".default_option").click(function () {
+                $(this).parent().toggleClass("active");
+            });
+            
+            $(".select_ul li").click(function () {
+                var currentele = $(this).html();
+                $(".default_option li").html(currentele);
+                $(this).parents(".select_wrap").removeClass("active");
+            });
+        });
+    </script>
+    
+    <!-- ----------------------------------------------------------- -->
+    <!-- ----------------Se muestra la lista de meses--------------- -->
+    <script>
+        $(document).ready(function () {
+            $(".default_mes").click(function () {
+                $(this).parent().toggleClass("active");
+            });
+            
+            $(".contenido_meses li").click(function () {
+                var currentele = $(this).html();
+                $(".default_mes li").html(currentele);
+                $(this).parents(".select_meses").removeClass("active");
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- -------------------------------------------------------------------- -->
+    <!-- --------------------- Lista de socios ------------------------------ -->
+    <div class="wrapper">
+        <div class="title">
+            Seleccione un socio:
+        </div>
+        
+        <div class="select_wrap">
+            <ul class="default_option">
+                <li>
+                    <div class="option text">
+                        <p>&nbsp; &nbsp; Seleccione:</p>
+                    </div>
+                </li>
+            </ul>
+            
+            <ul class="select_ul">
+                <li>
+                    <div class="option uno">
+                        <p>Socio1</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="option dos">
+                        <p>Socio2</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="option tres">
+                        <p>Socio3</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- -------------------------------------------------------------- -->
+    <!-- --------------------lista de dias----------------------------- -->
+    
+    <!-- <div class="wrapp">
+        <div class="text_dia">
+            Dia:
+        </div>
+        <input type="number" name="dia" />
+    </div> -->
+    
+    <!-- -------------------------------------------------------------- -->
+    <!-- --------------------lista de meses---------------------------  -->
+    
+    <div class="contenedor">
+        <div class="texto_mes">
+            Mes:
+        </div>
+        
+        <div class="select_mes">
+            <ul class="default_mes">
+                <li>
+                    <div class="opcion mes">
+                        <p>Seleccione:</p>
+                    </div>
+                </li>
+            </ul>
+            
+            <ul class="contenido_meses">
+                <li>
+                    <div class="meses mes">
+                        <li>
+                            <div class="mes uno">
+                                <p>Enero</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 2">
+                                <p>Febrero</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 3">
+                                <p>Marzo</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 4">
+                                <p>Abril</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 5">
+                                <p>Mayo</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 6">
+                                <p>Junio</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 7">
+                                <p>Julio</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 8">
+                                <p>Agosto</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 9">
+                                <p>Septiembre</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 10">
+                                <p>Octubre</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 11">
+                                <p>Noviembre</p>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mes 12">
+                                <p>Diciembre</p>
+                            </div>
+                        </li>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- ------------------------------------------------------------ -->
+    <!-- -------------------Boton ingresar abono--------------------- -->
+    
+    <div class="content_btn_abono">
+        <button class="button_abono">
+            <span class="text_btn">Ingresar multa polla</span>
+        </button>
+    </div>
+</body>
+</html>
